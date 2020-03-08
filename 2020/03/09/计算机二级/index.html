@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>计算机二级笔记 - Luo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="计算机二级公共知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机二级笔记">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/index.html">
+<meta property="og:site_name" content="Luo">
+<meta property="og:description" content="计算机二级公共知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b2.png">
+<meta property="article:published_time" content="2020-03-09T12:20:20.000Z">
+<meta property="article:modified_time" content="2020-03-08T17:53:26.413Z">
+<meta property="article:author" content="Luo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1583690252684">-->
+
+   
+    <style>
+      .nexmoe-avatar img:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }	
+    </style>
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Luo" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/luo.png# 网站 Logo" alt="Luo"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Luo">
+            <img src="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/luo.png# 网站 Logo" alt="Luo" alt="Luo">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="留言空间">
+            <i class="mdui-list-item-icon nexmoefont icon-mail-fill"></i>
+            <div class="mdui-list-item-content">
+                留言空间
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.baidu.com/" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/89685622" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/luoxi-1314/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://user.qzone.qq.com/1173564857" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(255, 165, 0);background-color: rgba(144, 238, 144, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Luo
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        
+<div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 62.5%;"> 
+          <img data-src="https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/a5.jpg" data-sizes="auto" alt="计算机二级笔记" class="lazyload">
+          <h1>计算机二级笔记</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 13 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机二级公共知识"><span class="toc-number">1.</span> <span class="toc-text">计算机二级公共知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构与算法"><span class="toc-number">1.1.</span> <span class="toc-text">数据结构与算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、排序"><span class="toc-number">1.1.1.</span> <span class="toc-text">一、排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入排序"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择排序"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#归并排序"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分查找"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">二分查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#希尔排序"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">希尔排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、数据结构"><span class="toc-number">1.1.2.</span> <span class="toc-text">二、数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#线性结构与非线性结构"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">线性结构与非线性结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#顺序存储"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">顺序存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链式存储"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">链式存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单链表-头结点"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">单链表(头结点)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性链表"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">线性链表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栈和队列"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">栈和队列</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、栈"><span class="toc-number">1.1.2.6.1.</span> <span class="toc-text">1、栈</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、队列"><span class="toc-number">1.1.2.6.2.</span> <span class="toc-text">2、队列</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二叉树"><span class="toc-number">1.1.2.7.</span> <span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性质"><span class="toc-number">1.1.2.7.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#序列（利用D、L、R解题）"><span class="toc-number">1.1.2.7.2.</span> <span class="toc-text">序列（利用D、L、R解题）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#顺序查找"><span class="toc-number">1.1.3.</span> <span class="toc-text">顺序查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、图"><span class="toc-number">1.1.4.</span> <span class="toc-text">三、图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#强连通图"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">强连通图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、算法"><span class="toc-number">1.1.5.</span> <span class="toc-text">四、算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#时间复杂度"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间复杂度"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序设计"><span class="toc-number">1.2.</span> <span class="toc-text">程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件设计："><span class="toc-number">1.2.1.</span> <span class="toc-text">软件设计：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#信息隐蔽："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">信息隐蔽：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块化："><span class="toc-number">1.2.1.2.</span> <span class="toc-text">模块化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构化程序："><span class="toc-number">1.2.1.3.</span> <span class="toc-text">结构化程序：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象："><span class="toc-number">1.2.2.</span> <span class="toc-text">面向对象：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象："><span class="toc-number">1.2.2.1.</span> <span class="toc-text">对象：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类："><span class="toc-number">1.2.2.3.</span> <span class="toc-text">类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多态性："><span class="toc-number">1.2.2.4.</span> <span class="toc-text">多态性：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件工程"><span class="toc-number">1.3.</span> <span class="toc-text">软件工程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件工程-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">软件工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#要素："><span class="toc-number">1.3.1.1.</span> <span class="toc-text">要素：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构化方法"><span class="toc-number">1.3.2.</span> <span class="toc-text">结构化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、需求获取"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1、需求获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、需求分析阶段"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2、需求分析阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、编写需求规格说明书"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3、编写需求规格说明书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、需求评审"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">4、需求评审</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件设计"><span class="toc-number">1.3.3.</span> <span class="toc-text">软件设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总体设计"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">总体设计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#系统设计阶段："><span class="toc-number">1.3.3.1.1.</span> <span class="toc-text">系统设计阶段：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#结构设计阶段："><span class="toc-number">1.3.3.1.2.</span> <span class="toc-text">结构设计阶段：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细设计"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">详细设计</span></a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+  <article>
+    <h1 id="计算机二级公共知识"><a href="#计算机二级公共知识" class="headerlink" title="计算机二级公共知识"></a>计算机二级公共知识</h1><a id="more"></a>
+
+<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><h3 id="一、排序"><a href="#一、排序" class="headerlink" title="一、排序"></a>一、排序</h3><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>快速排序的基本思想是，通过一趟排序将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分记录的关键字小，再分别对这两部分记录继续进行排序，以达到整个序列有序；</p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>插入排序的基本操作是指将无序序列中的各元素依次插入到已经有序的线性表中，从而得到一个新的序列；</p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>选择排序的基本思想是：扫描整个线性表，从中选出最小的元素，将它交换到表的最前面（这是它应有的位置），然后对剩下的子表采用同样的方法，直到表空为止；</p>
+<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>归并排序是将两个或两个以上的有序表组合成一个新的有序表。</p>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>二分法查找只适用于顺序存储的有序表，如果采用链式存储结构，也只能用顺序查找</p>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。 </p>
+<h3 id="二、数据结构"><a href="#二、数据结构" class="headerlink" title="二、数据结构"></a>二、数据结构</h3><h4 id="线性结构与非线性结构"><a href="#线性结构与非线性结构" class="headerlink" title="线性结构与非线性结构"></a>线性结构与非线性结构</h4><p>如果一个非空的数据结构满足下列两个条件：①有且只有一个根结点；②每个结点最多有一个前件，也最多有一个后件。则称该数据结构为线性结构，又称线性表。</p>
+<h4 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h4><p>顺序存储结构中，数据元素存放在一组地址连续的存储单元中，每个数据元素地址可通过公式LOC(ai)=LOC(a1)+(i-1)L计算得到，从而实现了随机存取。</p>
+<h4 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h4><p>链式存储结构，要对某结点进行存取，都得从链的头指针指向的结点开始，这是一种顺序存取的存储结构。</p>
+<h4 id="单链表-头结点"><a href="#单链表-头结点" class="headerlink" title="单链表(头结点)"></a>单链表(头结点)</h4><p>头结点不仅标识了表中首结点的位置，而且根据单链表（包含头结点）的结构，只要掌握了表头，就能够访问整个链表，因此增加头结点目的是为了便于运算的实现。</p>
+<h4 id="线性链表"><a href="#线性链表" class="headerlink" title="线性链表"></a>线性链表</h4><p> 线性表的链式存储结构称为线性链表，为了适应线性表的链式存储结构，计算机存储空间被划分为一个一个小块，每一小块占若干字节，通常称这些小块为存储结点。每一个存储结点分为两部分：一部分用于存储数据元素的值，称为数据域；另一部分用于存放下一个数据元素的存储序号，即指向后件的结点，称为指针域。在链式存储结构中，存储数据结构的存储空间可以不连续，各数据结点的存储顺序与数据元素之间的逻辑关系可以不一致。</p>
+<p>为了要在线性链表中插入一个新元素，首先要给该元素分配一个新结点，以便用于存储该元素的值，然后将存放新元素值的结点链接到线性表中指定的位置。在线性链表的插入过程中不发生数据无素移动的现象，只需改变有关结点的指针即可，从而提高了插入的效率。为了在线性链表中删除包含指定元素的结点，首先要在线性链表中找到这个结点，然后将要删除结点放回到可利用栈。在线性链表中删除一个元素后，不需要移动表的数据元素，只需改变被删元素所在结点的前一个结点的指针域即可。因此，进行插入与删除时，不需要移动表中的元素。</p>
+<h4 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h4><h5 id="1、栈"><a href="#1、栈" class="headerlink" title="1、栈"></a>1、栈</h5><ul>
+<li>栈是一种特殊的线性表，这种线性表只能在固定的一端进行插入和删除操作，允许插入和删除的一端称为栈顶，另一端称为栈底。一个新元素只能从栈顶一端进入，删除时，只能删除栈顶的元素，即刚刚被插入的元素。所以栈又称先进后出表（FILO-First In Last Out）。线性表可以顺序存储，也可以链式存储，而栈是一种线性表，也可以采用链式存储结构。</li>
+<li>栈是一种只能在一端进行插入或删除操作的线性表。在主程序调用子程序时要首先保存主程序当前的状态，然后去执行子程序，最终把子程序的执行结果返回到主程序调用子程序的位置，继续向下执行。这种调用符合栈”先进后出”的功能。</li>
+<li>栈分两种，开口向下和开口向上的，看top值的大小，退栈后top值降低就是从上向下压底，如果是开口向上则是栈底的值降底 </li>
+</ul>
+<h5 id="2、队列"><a href="#2、队列" class="headerlink" title="2、队列"></a>2、队列</h5><ul>
+<li><p>队列只允许在表的一端进行插入操作，在另一端进行删除操作，是一种”先进先出”的线性表。</p>
+</li>
+<li><p>与队列结构有关联的是先到先服务的作业调度。</p>
+</li>
+</ul>
+<h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><h5 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h5><ul>
+<li><p>非空二叉树中的度为0的结点（即叶子结点）的数量等于双分支结点（度为2的结点）的数量加1.</p>
+</li>
+<li><p>二叉树的第i层上最多有<img data-sizes="auto" data-src=" https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png" alt="avast" class="lazyload">个节点。</p>
+</li>
+<li><p>高度（或深度）为i的二叉树最多有<img data-sizes="auto" data-src=" https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png" alt="avast" class="lazyload">个节点。也可以认为高度为i的二叉树有<img data-sizes="auto" data-src=" https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b1.png" alt="avast" class="lazyload">个结点，那么该二叉树为满二叉树</p>
+</li>
+<li><p>给定n个结点，能够成h(n)种不同的二叉树<img data-sizes="auto" data-src=" https://raw.githubusercontent.com/luoxi-1314/mycdn/master/imp/b2.png" alt="avast" class="lazyload"></p>
+</li>
+</ul>
+<h5 id="序列（利用D、L、R解题）"><a href="#序列（利用D、L、R解题）" class="headerlink" title="序列（利用D、L、R解题）"></a>序列（利用D、L、R解题）</h5><ul>
+<li>前序序列(DLR)</li>
+<li>中序序列(LDR)</li>
+<li>后序序列(LRD)</li>
+</ul>
+<h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><p>在进行顺序查找过程中，如果线性表中的第一个元素就是被查找元素，则只需做一次比较就查找成功，查找效率最高；但如果被查找的元素是线性表中的最后一个元素，或者被查找的元素根本就不在线性表中，则为了查找这个元素需要与线性表中所有的元素进行比较，这是顺序查找的最坏情况。所以对长度为n的线性表进行顺序查找，在最坏情况下需要比较n次。</p>
+<h3 id="三、图"><a href="#三、图" class="headerlink" title="三、图"></a>三、图</h3><h4 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h4><p> 在有向图中，若任意两个顶点都连通，则称该图是强连通图，这样的有向图的形状是环状，因而至少应有n条边。</p>
+<h3 id="四、算法"><a href="#四、算法" class="headerlink" title="四、算法"></a>四、算法</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>所谓算法的时间复杂度，是指执行算法所需要的计算工作量。为了能够比较客观地反映出一个算法的效率，在度量一个算法的工作量时，不仅应该与所使用的计算机、程序设计语言以及程序编制者无关，而且还应该与算法实现过程中的许多细节无关。为此，可以用算法在执行过程中所需基本运算的执行次数来度量算法的工作量。</p>
+<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度</p>
+<table>
+<thead>
+<tr>
+<th align="center">排序方法</th>
+<th align="center">时间复杂度(平均)</th>
+<th align="center">时间复杂度(最坏)</th>
+<th align="center">时间复杂度(最好)</th>
+<th align="center">空间复杂度</th>
+<th align="center">稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">插入排序</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">希尔排序</td>
+<td align="center">O(n^(1.3~2))</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">不稳定</td>
+</tr>
+<tr>
+<td align="center">选择排序</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(1)</td>
+<td align="center">不稳定</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(1)</td>
+<td align="center">不稳定</td>
+</tr>
+<tr>
+<td align="center">冒泡排序</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">不稳定</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(nlog₂n)</td>
+<td align="center">O(n)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">计数排序</td>
+<td align="center">O(n+k)</td>
+<td align="center">O(n+k)</td>
+<td align="center">O(n+k)</td>
+<td align="center">O(n+k)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">桶排序</td>
+<td align="center">O(n+k)</td>
+<td align="center">O(n²)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n+k)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">基数排序</td>
+<td align="center">O(n*k)</td>
+<td align="center">O(n*k)</td>
+<td align="center">O(n*k)</td>
+<td align="center">O(n+k)</td>
+<td align="center">稳定</td>
+</tr>
+</tbody></table>
+<h2 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h2><h3 id="软件设计："><a href="#软件设计：" class="headerlink" title="软件设计："></a>软件设计：</h3><p>在软件设计过程中，必须遵循软件工程的基本原则：这些原则包括抽象、信息隐蔽、模块化、局部化、确定性、一致性、完备性和可靠性。</p>
+<h4 id="信息隐蔽："><a href="#信息隐蔽：" class="headerlink" title="信息隐蔽："></a>信息隐蔽：</h4><p>信息隐蔽是指在一个模块内包含的信息（过程或数据），对于不需要这些信息的其他模块来说是不能访问的（采用封装技术）</p>
+<h4 id="模块化："><a href="#模块化：" class="headerlink" title="模块化："></a>模块化：</h4><p>模块独立性是指每个模块只完成系统要求的独立的子功能，并且与其他模块的联系最少且接口简单</p>
+<p>衡量软件的模块独立性的度量标准是耦合性和内聚性。一个模块的内聚性越强，则该模块的模块独立性越强。而内聚性是信息隐蔽和局部化概念的自然扩展。</p>
+<h4 id="结构化程序："><a href="#结构化程序：" class="headerlink" title="结构化程序："></a>结构化程序：</h4><p>结构化程序设计方法的主要原则可以概括为自顶向下，逐步求精，模块化，限制使用goto语句。</p>
+<h3 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h3><h4 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h4><p>它的基本特点有：标识惟一性、分类性、多态性、封装性和模块独立性好。</p>
+<p>对象可以做的操作表示它的动态行为。属性是对象所包含的信息，属性值应该指的是纯粹的数据值，而不能指对象。继承是使用已有的类定义作为基础建立新类的定义技术。并非所有的对象都必须有继承性。对象是由数据和容许的操作组成的封装体。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承是使用已有的类定义作为基础建立新类的定义技术。已有的类可当作基类来引用，则新类相应地可当作派生类来引用。广义地说，继承是指能够直接获得已有的性质和特征，而不必重复定义它们。面向对象软件技术的许多强有力的功能和特点，都来源于把类组成一个层次结构的系统：一个类的上层可以有父类，下层可以有子类。这种层次结构系统的一个重要性质就是继承性，一个类直接继承其父类的描述（数据和操作）或特性，子类自动地共享基类中定义的数据和方法。</p>
+<h4 id="类："><a href="#类：" class="headerlink" title="类："></a>类：</h4><p> 类是具有共同属性、共同方法的对象的集合。所以，类是对象的抽象</p>
+<h4 id="多态性："><a href="#多态性：" class="headerlink" title="多态性："></a>多态性：</h4><p>多态性是指子类对象可以像父类对象那样使用，同样的消息既可以发送给父类对象也可以发送给子类对象。</p>
+<h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h3 id="软件工程-1"><a href="#软件工程-1" class="headerlink" title="软件工程"></a>软件工程</h3><h4 id="要素："><a href="#要素：" class="headerlink" title="要素："></a>要素：</h4><p>方法、工具和过程</p>
+<h3 id="结构化方法"><a href="#结构化方法" class="headerlink" title="结构化方法"></a>结构化方法</h3><h4 id="1、需求获取"><a href="#1、需求获取" class="headerlink" title="1、需求获取"></a>1、需求获取</h4><p>需求获取的目的是确定对目标系统的各方面需求。涉及到的主要任务是建立获取用户需求的方法框架，并支持和监控需求获取的过程。</p>
+<h4 id="2、需求分析阶段"><a href="#2、需求分析阶段" class="headerlink" title="2、需求分析阶段"></a>2、需求分析阶段</h4><p>需求分析是对获取的需求进行分析和综合，最终给出系统的解决方案和目标系统的逻辑模型。</p>
+<p>常用的工具是数据流图（DFD）和数据字典。</p>
+<h4 id="3、编写需求规格说明书"><a href="#3、编写需求规格说明书" class="headerlink" title="3、编写需求规格说明书"></a>3、编写需求规格说明书</h4><p>编写需求规格说明书作为需求分析的阶段成果，可以为用户、分析人员和设计人员之间的交流提供方便，可以直接支持目标软件系统的确认，又可以作为控制软件开发进程的依据。</p>
+<h4 id="4、需求评审"><a href="#4、需求评审" class="headerlink" title="4、需求评审"></a>4、需求评审</h4><p>需求评审是对需求分析阶段的工作进行复审，验证需求文档的一致性、可行性、完整性和有效性。</p>
+<h3 id="软件设计"><a href="#软件设计" class="headerlink" title="软件设计"></a>软件设计</h3><h4 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h4><p>总体设计的任务是确定软件的总体结构，子系统和模块的划分，并确定模块间的接口和评价模块划分质量，以及进行数据分析。</p>
+<h5 id="系统设计阶段："><a href="#系统设计阶段：" class="headerlink" title="系统设计阶段："></a>系统设计阶段：</h5><p>确定系统的具体实现方案；</p>
+<h5 id="结构设计阶段："><a href="#结构设计阶段：" class="headerlink" title="结构设计阶段："></a>结构设计阶段：</h5><p>为确定软件结构，首先需要从实现角度把复杂的功能进一步分解。</p>
+<h4 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h4><p>详细设计的任务是确定每一模块实现的定义，包括数据结构、算法和接口。</p>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Luo<br>
+    <strong>本文链接：</strong><a href="http://yoursite.com/2020/03/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;09&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>洛臣心
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'Q8LeJjynzgVHTzO2zMKR368i-gzGzoHsz',
+        appKey: 'EK5MVg7N8jbupXt3egwXwbvu'
+    })
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1583690252685"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+ 
+<script> 
+!function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+</script>
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
