@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+
+
+  
+  <title>MySQL - Luo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="https://luoxi-1314.github.io/2020/03/23/index.html">
+<meta property="og:site_name" content="Luo">
+<meta property="og:description" content="MySQL">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn/imp/sql1.jpg">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9vVTE1b1VNc2VaYVQyYlFENk9CVlhxVURXc0pVQW1pY05lQ3NpYUIxNkZ1QlRGQTZpYlpLcVFvUkY3MW1lcFQ3eURuazdBOGlhN3I0bExON0dtcUNJdFI0MlEvNjQw?x-oss-process=image/format,png">
+<meta property="article:published_time" content="2020-03-23T12:20:20.000Z">
+<meta property="article:modified_time" content="2020-03-25T21:21:03.602Z">
+<meta property="article:author" content="Luo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn/imp/sql1.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1585188954100">-->
+
+   
+    <style>
+      .nexmoe-avatar img:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }	
+    </style>
+  
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body class="mdui-drawer-body-left">
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+
+<!--播放器-->
+<link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+
+ <!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Luo" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn@1.0/imp/luo.png" alt="Luo"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Luo">
+            <img src="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn@1.0/imp/luo.png" alt="Luo" alt="Luo">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>8</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="留言空间">
+            <i class="mdui-list-item-icon nexmoefont icon-mail-fill"></i>
+            <div class="mdui-list-item-content">
+                留言空间
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/89685622" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/luoxi-1314/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://user.qzone.qq.com/1173564857" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(255, 165, 0);background-color: rgba(144, 238, 144, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Luo
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        
+<div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 55.833333333333336%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn/imp/a19.jpg" data-sizes="auto" alt="MySQL" class="lazyload">
+          <h1>MySQL</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>694 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择语句"><span class="toc-number">1.1.</span> <span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库连接"><span class="toc-number">1.2.</span> <span class="toc-text">数据库连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增删改"><span class="toc-number">1.3.</span> <span class="toc-text">增删改</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+  <article>
+    <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><a id="more"></a>
+
+<h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> 
+<span class="token keyword">from</span> customers
+<span class="token comment" spellcheck="true">-- where customers_id = 1</span>
+<span class="token comment" spellcheck="true">-- order by first_name       </span>
+<span class="token comment" spellcheck="true">-- "-- "相当于注释</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+    last_name<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>points <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token keyword">as</span> discount_factor
+<span class="token keyword">from</span> customers
+<span class="token comment" spellcheck="true">-- 1、select可以使用运算符；</span>
+<span class="token comment" spellcheck="true">-- 2、as起别名,若要加入空格可用 ' '</span></code></pre>
+<p><img data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/luoxi-1314/mycdn/imp/sql1.jpg" alt="" class="lazyload"></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> state
+<span class="token keyword">FROM</span> customers<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- distance 查询数据并去掉重复项</span></code></pre>
+<p><strong>WHERE子句</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> customers
+<span class="token keyword">where</span> points <span class="token operator">></span> <span class="token number">3000</span>
+<span class="token comment" spellcheck="true">-- where中可以使用算数运算、逻辑运算</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">where</span> state <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'VA'</span><span class="token punctuation">,</span><span class="token string">'FL'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- in的用法</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">where</span> points <span class="token operator">between</span> <span class="token number">100</span> <span class="token operator">and</span> <span class="token number">300</span>
+<span class="token comment" spellcheck="true">-- between的用法</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">where</span> last_name <span class="token operator">like</span> <span class="token string">'b%'</span>
+<span class="token comment" spellcheck="true">-- like的用法</span>
+<span class="token comment" spellcheck="true">-- %多个字符占位符</span>
+<span class="token comment" spellcheck="true">-- _单个字符占位符</span></code></pre>
+<p><strong>正则表达式</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">where</span> last_name <span class="token operator">regexp</span> <span class="token string">'field$'</span></code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">元字符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">^</td>
+<td align="center">开始</td>
+</tr>
+<tr>
+<td align="center">&amp;</td>
+<td align="center">结尾</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">或</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">包含</td>
+</tr>
+<tr>
+<td align="center">，</td>
+<td align="center">分割</td>
+</tr>
+</tbody></table>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">where</span> phone <span class="token operator">is</span> <span class="token boolean">null</span> 
+<span class="token comment" spellcheck="true">-- null的用法</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">order</span> <span class="token keyword">by</span> first_name <span class="token keyword">desc</span>
+<span class="token comment" spellcheck="true">-- order by 用法：用于排序 </span>
+<span class="token comment" spellcheck="true">-- desc 降序排列</span>
+<span class="token comment" spellcheck="true">-- asc 升序</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> customers
+<span class="token keyword">limit</span> <span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span>
+<span class="token comment" spellcheck="true">--limit用法：根据位置查数据</span></code></pre>
+<h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 内连接</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> orders
+<span class="token keyword">join</span> customers
+    <span class="token keyword">on</span> orders<span class="token punctuation">.</span>customer_id <span class="token operator">=</span> customers<span class="token punctuation">.</span>customer_id 
+<span class="token comment" spellcheck="true">-- join 多张表里查询 </span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 跨数据库连接</span>
+<span class="token keyword">use</span> sql_inventory<span class="token punctuation">;</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> store<span class="token punctuation">.</span>order_items oi
+<span class="token keyword">join</span> sql_inventory<span class="token punctuation">.</span>products p
+    <span class="token keyword">on</span> oi<span class="token punctuation">.</span>product_id <span class="token operator">=</span> p<span class="token punctuation">.</span>product_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 自连接</span>
+<span class="token keyword">use</span> sql_hr<span class="token punctuation">;</span>
+<span class="token keyword">select</span> 
+    <span class="token number">e</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">,</span>
+    <span class="token number">e</span><span class="token punctuation">.</span>first_name<span class="token punctuation">,</span>
+    m<span class="token punctuation">.</span>first_name <span class="token keyword">as</span> manager
+<span class="token keyword">from</span> employees <span class="token number">e</span>
+<span class="token keyword">join</span> employees m
+    <span class="token keyword">on</span> <span class="token number">e</span><span class="token punctuation">.</span>reports_to <span class="token operator">=</span> m<span class="token punctuation">.</span>employee_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 多表连接</span>
+<span class="token keyword">use</span> store<span class="token punctuation">;</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> orders o
+<span class="token keyword">join</span> customers <span class="token number">c</span>
+    <span class="token keyword">on</span> o<span class="token punctuation">.</span>customer_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>customer_id
+<span class="token keyword">join</span> order_statuses os
+    <span class="token keyword">on</span> o<span class="token punctuation">.</span><span class="token keyword">status</span> <span class="token operator">=</span> os<span class="token punctuation">.</span>order_status_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 复合条件连接</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> order_items oi
+<span class="token keyword">join</span> order_item_notes oin
+    <span class="token keyword">on</span> oi<span class="token punctuation">.</span>order_id <span class="token operator">=</span> oin<span class="token punctuation">.</span>order_id
+    <span class="token operator">and</span> oi<span class="token punctuation">.</span>product_id <span class="token operator">=</span> oin<span class="token punctuation">.</span>product_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 隐含连接</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> orders o<span class="token punctuation">,</span> customers <span class="token number">c</span>
+<span class="token keyword">where</span> o<span class="token punctuation">.</span>customer_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>customer_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 外连接</span>
+<span class="token keyword">select</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span>
+    <span class="token number">c</span><span class="token punctuation">.</span>first_name<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_id
+<span class="token keyword">from</span> customers <span class="token number">c</span>
+<span class="token keyword">join</span> orders o
+    <span class="token keyword">on</span> <span class="token number">c</span><span class="token punctuation">.</span>customer_id <span class="token operator">=</span> o<span class="token punctuation">.</span>customer_id
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">c</span><span class="token punctuation">.</span>customer_id
+<span class="token comment" spellcheck="true">-- 可以加left right</span>
+<span class="token comment" spellcheck="true">-- left join ...</span></code></pre>
+<p><img data-sizes="auto" data-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9vVTE1b1VNc2VaYVQyYlFENk9CVlhxVURXc0pVQW1pY05lQ3NpYUIxNkZ1QlRGQTZpYlpLcVFvUkY3MW1lcFQ3eURuazdBOGlhN3I0bExON0dtcUNJdFI0MlEvNjQw?x-oss-process=image/format,png" alt="" class="lazyload"></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- USING子句</span>
+<span class="token keyword">select</span> 
+    o<span class="token punctuation">.</span>order_id<span class="token punctuation">,</span>
+    o<span class="token punctuation">.</span>order_date<span class="token punctuation">,</span>
+    <span class="token number">c</span><span class="token punctuation">.</span>first_name <span class="token keyword">as</span> customer
+<span class="token keyword">from</span> orders o
+<span class="token keyword">join</span> customers <span class="token number">c</span>
+    <span class="token keyword">on</span> o<span class="token punctuation">.</span>customer_id  <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>customer_id
+<span class="token keyword">join</span> shippers sd
+    <span class="token keyword">on</span> o<span class="token punctuation">.</span>shipper_id <span class="token operator">=</span> sh<span class="token punctuation">.</span>shipper_idcustomers
+<span class="token comment" spellcheck="true">-- USING 可以简洁ON语法</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 自然连接</span>
+<span class="token keyword">select</span> 
+    o<span class="token punctuation">.</span>order_id<span class="token punctuation">,</span>
+    <span class="token number">c</span><span class="token punctuation">.</span>first_name
+<span class="token keyword">from</span> orders o
+<span class="token keyword">natural</span> <span class="token keyword">join</span> customers <span class="token number">c</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 交叉连接 ： 笛卡尔积</span>
+<span class="token keyword">select</span> 
+    <span class="token number">c</span><span class="token punctuation">.</span>first_name <span class="token keyword">as</span> customer<span class="token punctuation">,</span>
+    p<span class="token punctuation">.</span>name <span class="token keyword">as</span> product
+<span class="token keyword">from</span> customers <span class="token number">c</span>
+<span class="token keyword">cross</span> <span class="token keyword">join</span> products p
+<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">c</span><span class="token punctuation">.</span>first_name</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 联合</span>
+<span class="token keyword">select</span> first_name
+<span class="token keyword">from</span> customers
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> name
+<span class="token keyword">from</span> shippers
+<span class="token comment" spellcheck="true">-- 将两个sql语句联合在一起</span></code></pre>
+<h3 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h3><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 插入单行</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> customers <span class="token punctuation">(</span>
+    first_name<span class="token punctuation">,</span>
+    last_name<span class="token punctuation">,</span>
+    birth_date<span class="token punctuation">,</span>
+    address<span class="token punctuation">,</span>
+    city<span class="token punctuation">,</span>
+    state<span class="token punctuation">)</span>
+<span class="token keyword">values</span> <span class="token punctuation">(</span> 
+    <span class="token string">'John'</span> <span class="token punctuation">,</span>
+    <span class="token string">'Smith'</span><span class="token punctuation">,</span>
+    <span class="token string">'1900-01-01'</span><span class="token punctuation">,</span>
+    <span class="token string">'address'</span><span class="token punctuation">,</span>
+    <span class="token string">'city'</span><span class="token punctuation">,</span>
+    <span class="token string">'CA'</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 插入多行</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> shippers <span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+<span class="token keyword">values</span>  <span class="token punctuation">(</span><span class="token string">'shipper1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+        <span class="token punctuation">(</span><span class="token string">'shipper2'</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 创建表复制</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> orders_archived <span class="token keyword">as</span> 
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> orders</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 更新单行</span>
+<span class="token keyword">update</span> invoices
+<span class="token keyword">set</span> payment_total <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> payment_date <span class="token operator">=</span> <span class="token string">'2019-03-01'</span>
+<span class="token keyword">where</span> invoice_id <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 更新多行</span>
+<span class="token keyword">update</span> customers
+<span class="token keyword">set</span> points <span class="token operator">=</span> points <span class="token operator">+</span> <span class="token number">50</span>
+<span class="token keyword">where</span> birth_date <span class="token operator">&lt;</span> <span class="token string">'1990-01-01'</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- update中用子句查询</span>
+<span class="token keyword">update</span> invoices
+<span class="token keyword">set</span> 
+    payment_total <span class="token operator">=</span> invoice_total <span class="token operator">*</span> <span class="token number">50</span><span class="token punctuation">,</span>
+    payment_date <span class="token operator">=</span> due_date
+<span class="token keyword">where</span> client_id <span class="token operator">in</span>
+                <span class="token punctuation">(</span><span class="token keyword">select</span> client_id
+                <span class="token keyword">from</span> clients
+                <span class="token keyword">where</span> state <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'CA'</span><span class="token punctuation">,</span><span class="token string">'NY'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 删除行</span>
+<span class="token keyword">delete</span> <span class="token keyword">from</span> invoices
+<span class="token keyword">where</span> invoice_id <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 聚合函数</span>
+<span class="token keyword">select</span> 
+    <span class="token function">max</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> highest<span class="token punctuation">,</span>
+    <span class="token function">min</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> lowest<span class="token punctuation">,</span>
+    <span class="token function">avg</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> average<span class="token punctuation">,</span>
+    <span class="token function">sum</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> total_of_invoices<span class="token punctuation">,</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>payment_date<span class="token punctuation">)</span> <span class="token keyword">as</span> count_of_number
+<span class="token keyword">from</span> invoices</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- group by分组查看</span>
+<span class="token keyword">select</span>
+    client_id<span class="token punctuation">,</span>
+    <span class="token function">sum</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> total_sales
+<span class="token keyword">from</span> invoices
+<span class="token keyword">group</span> <span class="token keyword">by</span> client_id</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- having 筛选数据</span>
+<span class="token keyword">select</span>
+    client_id<span class="token punctuation">,</span>
+    <span class="token function">sum</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> total_sales
+<span class="token keyword">from</span> invoices
+<span class="token keyword">group</span> <span class="token keyword">by</span> client_id
+<span class="token keyword">having</span> total_sales <span class="token operator">></span> <span class="token number">500</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- rollup 分组汇总</span>
+<span class="token keyword">select</span>
+    state<span class="token punctuation">,</span>
+    city<span class="token punctuation">,</span>
+    <span class="token function">sum</span><span class="token punctuation">(</span>invoice_total<span class="token punctuation">)</span> <span class="token keyword">as</span> total_sales
+<span class="token keyword">from</span> invoices i
+<span class="token keyword">join</span> clients <span class="token number">c</span> <span class="token keyword">using</span> <span class="token punctuation">(</span>client_id<span class="token punctuation">)</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> client_id <span class="token keyword">with rollup</span></code></pre>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Luo<br>
+    <strong>本文链接：</strong><a href="https://luoxi-1314.github.io/2020/03/23/" title="https:&#x2F;&#x2F;luoxi-1314.github.io&#x2F;2020&#x2F;03&#x2F;23&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;luoxi-1314.github.io&#x2F;2020&#x2F;03&#x2F;23&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>洛臣心
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'Q8LeJjynzgVHTzO2zMKR368i-gzGzoHsz',
+        appKey: 'EK5MVg7N8jbupXt3egwXwbvu'
+    })
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1585188954101"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+ 
+<script> 
+!function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
+</script>
+
+
+# 若是after-footer.ejs，在最后添加
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+  
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
